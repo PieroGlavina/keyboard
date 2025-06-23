@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+    --font-display: "JetBrains Mono", "sans-serif";
+
+    --color-custom-gray: #676767;
+    --color-custom-gray-light: #b7b7b7;
+}
+
+@layer base {
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+body{
+    background: #0c0c0c;
+}
+
+@utility radial-gradient {
+    background: radial-gradient(
+            circle at center,
+            #434343 0%,
+            #0c0c0c 70%,
+            transparent 100%
+    );
+
+
+}@utility hero-radial-gradient {
+    background: radial-gradient(
+            circle at center,
+            #2b2a2a 0%,
+            #0c0c0c 45%,
+            transparent 100%
+    );
+}
