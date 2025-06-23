@@ -2,8 +2,8 @@ import {Canvas} from "@react-three/fiber";
 import {PerspectiveCamera} from "@react-three/drei";
 import {Suspense, useEffect, useState} from "react";
 import Keyboard from "../../models/Keyboard.jsx";
-import {OrbitControls} from "@react-three/drei";
 import HeroCamera from "./HeroCamera.jsx";
+import Loader from "../Loader.jsx";
 
 const KeyboardModelContainer = () => {
 
@@ -51,7 +51,7 @@ const KeyboardModelContainer = () => {
                 />
 
 
-                <Suspense fallback={null}>
+                <Suspense fallback={<Loader />}>
                     <HeroCamera isMobile={false}>
                         <Keyboard
                             reciveShadow
