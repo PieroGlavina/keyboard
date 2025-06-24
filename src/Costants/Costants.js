@@ -151,12 +151,6 @@ export const keyboardText = [
 
 export const customizerText = [
     {
-        id: 1,
-        title: "Let’s start with the case!",
-        description: "The case is the outer shell of a mechanical keyboard that holds all components together. " +
-            "It affects the keyboard’s look, sound, and feel, and comes in different materials, sizes, and mounting styles for full customization."
-    },
-    {
         id: 2,
         title: "Choose now your PCB!",
         description: "The PCB (Printed Circuit Board) is the electronic heart of the keyboard. It registers key presses and connects all switches." +
@@ -181,3 +175,14 @@ export const customizerText = [
             " and come in different shapes, profiles, materials, and printing methods."
     }
 ];
+
+export const keyBoardCtz = {
+    title: "Let’s start with the case!",
+    description: "The case is the outer shell of a mechanical keyboard that holds all components together. " +
+        "It affects the keyboard’s look, sound, and feel, and comes in different materials, sizes, and mounting styles for full customization.",
+    materials: [
+        { id: 1, name: "Aluminum", color: "#b4c5f8", price: 50},
+        { id: 2, name: "Plastic",  color: "#1d357c", price: 20},
+        { id: 3, name: "Acrilic", color: "#030a1e", price: 35}
+    ]
+}

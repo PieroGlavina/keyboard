@@ -15,7 +15,7 @@ const Customizer = () => {
                     <CustomizerContainer />
                 </div>
 
-                <div className="w-1/3 h-[90%] bg-white">
+                <div className="w-1/3 h-[90%] ">
                     <Carousel />
 
                 </div>
