@@ -149,34 +149,7 @@ export const keyboardText = [
     }
 ]
 
-export const customizerText = [
-    {
-        id: 2,
-        title: "Choose now your PCB!",
-        description: "The PCB (Printed Circuit Board) is the electronic heart of the keyboard. It registers key presses and connects all switches." +
-            " Different PCBs offer various features like hot-swap, RGB lighting, and layout compatibility.."
-    },
-    {
-        id: 3,
-        title: "Choose now your Plate!",
-        description: "The plate sits between the switches and the PCB, holding the switches firmly in place." +
-            " It affects how the keyboard feels and sounds when typing, depending on the material and layout cutouts."
-    },
-    {
-        id: 4,
-        title: "Time for the switches!",
-        description: "Switches are the mechanical components beneath each keycap that register key presses." +
-            " They determine how a keyboard feels and sounds, and come in different types: linear, tactile, and clicky."
-    },
-    {
-        id: 5,
-        title: "Final step! Choose your keycaps!",
-        description: "Keycaps are the visible tops of your keyboard keys. They affect the look, feel, and sound of your keyboard," +
-            " and come in different shapes, profiles, materials, and printing methods."
-    }
-];
-
-export const keyBoardCtz = {
+export const caseCtz = {
     title: "Let’s start with the case!",
     description: "The case is the outer shell of a mechanical keyboard that holds all components together. " +
         "It affects the keyboard’s look, sound, and feel, and comes in different materials, sizes, and mounting styles for full customization.",
@@ -186,3 +159,41 @@ export const keyBoardCtz = {
         { id: 3, name: "Acrilic", color: "#030a1e", price: 35}
     ]
 }
+
+export const pcbCtz = {
+    title: "Choose now your PCB!",
+    description: "The PCB (Printed Circuit Board) is the electronic heart of the keyboard. It registers key presses and connects all switches." +
+        " Different PCBs offer various features like hot-swap, RGB lighting, and layout compatibility.",
+    types: [
+        { id: 1, name: "Hot-swap (no soldering)", color: "#bababa", price: 50},
+        { id: 2, name: "Solderable",  color: "#3c3c3c", price: 20},
+    ],
+    connection: [
+        { id: 1, name: "USB-C)", color: "#bababa", price: 10},
+        { id: 2, name: "Wireless (Bluetooth /2.4GHz)",  color: "#3c3c3c", price: 15},
+        { id: 2, name: "Both",  color: "#3c3c3c", price: 25},
+    ]
+}
+
+export const plateCtz = {
+    title: "Choose now your Plate!",
+    description: "The plate sits between the switches and the PCB, holding the switches firmly in place. It affects how the keyboard feels " +
+        "and sounds when typing, depending on the material and layout cutouts.",
+    materials: [
+        { id: 1, name: "Aluminum", color: "#a1a3af", price: 15},
+        { id: 2, name: "Brass",  color: "#d8ac16", price: 20},
+        { id: 3, name: "Carbon Fiber", color: "#171515", price: 35}
+    ]
+}
+
+export const keycapCtz = {
+    title: "Final step! Choose your keycaps!",
+    description: "Keycaps are the visible tops of your keyboard keys. They affect the look, feel, and sound of your keyboard," +
+        " and come in different shapes, profiles, materials, and printing methods.",
+    materials: [
+        { id: 1, name: "ABS – Smooth and lightweight; prone to shine over time", color: "#a1a3af", price: 15},
+        { id: 2, name: "PBT – Textured and durable; resists wear and shine.",  color: "#d8ac16", price: 20},
+        { id: 3, name: "POM – Slick, smooth feel with high durability (less common).", color: "#171515", price: 35}
+    ]
+}
+

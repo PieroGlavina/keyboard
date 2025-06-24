@@ -1,13 +1,19 @@
 import React, {useState} from 'react'
 import CaseCustomizer from "./CaseCustomizer.jsx";
+import PcbCustomizer from "./PcbCustomizer.jsx";
+import PlateCustomizer from "./PlateCustomizer.jsx";
+import SwitchCustomizer from "./SwitchCustomizer.jsx";
+import KeyCaps from "../../models/KeyCaps.jsx";
+import KeyCapsCustomizer from "./KeyCapsCustomizer.jsx";
 
 const Carousel = () => {
 
     const pages = [
         <CaseCustomizer key="1"/>,
-        <div key="2" className="flex items-center justify-center">PAGE 2</div>,
-        <div key="3" className="flex items-center justify-center">PAGE 3</div>,
-        <div key="4" className="flex items-center justify-center">PAGE 4</div>
+        <PcbCustomizer key="2"/>,
+        <PlateCustomizer key="3"/>,
+        <SwitchCustomizer key="4"/>,
+        <KeyCapsCustomizer key="5"/>
     ]
 
     const [currentIndex, setCurrentIndex] = useState(0);
