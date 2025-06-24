@@ -1,10 +1,26 @@
-import React, {Suspense} from 'react'
+import React, {Suspense, useEffect, useState} from 'react'
 import {Canvas} from "@react-three/fiber";
 import {PerspectiveCamera} from "@react-three/drei";
 import HeroCamera from "./HeroCamera.jsx";
 import Switch from "../../models/Switch.jsx";
 
 const SwitchModelContainer = ({color, sound}) => {
+
+    const [switchScale, setSwitchScale] = useState(18);
+
+    const adjustKeyboardForScreenSize = () => {
+        let scale = window.innerWidth < 768 ? 16 : 18;
+        setSwitchScale(scale);
+    }
+
+    useEffect(() => {
+        adjustKeyboardForScreenSize();
+        window.addEventListener("resize", adjustKeyboardForScreenSize);
+        return () => {window.removeEventListener("resize", adjustKeyboardForScreenSize);}
+    }, []);
+
+
+
     return (
         <div className="w-full h-full">
             <Canvas>
@@ -12,7 +28,6 @@ const SwitchModelContainer = ({color, sound}) => {
 
                 <ambientLight intensity={3}/>
 
-                {/* Directional Light principale */}
                 <directionalLight
                     position={[2, 4, 2]}
                     intensity={3}
@@ -27,7 +42,6 @@ const SwitchModelContainer = ({color, sound}) => {
                     shadow-camera-bottom={-2}
                 />
 
-                {/* Luce di riempimento per contrasto morbido */}
                 <directionalLight
                     position={[-3, 2, -2]}
                     intensity={0.4}
@@ -41,7 +55,7 @@ const SwitchModelContainer = ({color, sound}) => {
                             reciveShadow
                             castShadow
                             position={[0, 0, -0.25]}
-                            scale={[16, 16, 16]}
+                            scale={switchScale}
                             rotation={[0.05,0.3, -0.3]}
                             color={color}
                             sound={sound}

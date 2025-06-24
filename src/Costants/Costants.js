@@ -148,3 +148,36 @@ export const keyboardText = [
         end: 0.95,
     }
 ]
+
+export const customizerText = [
+    {
+        id: 1,
+        title: "Let’s start with the case!",
+        description: "The case is the outer shell of a mechanical keyboard that holds all components together. " +
+            "It affects the keyboard’s look, sound, and feel, and comes in different materials, sizes, and mounting styles for full customization."
+    },
+    {
+        id: 2,
+        title: "Choose now your PCB!",
+        description: "The PCB (Printed Circuit Board) is the electronic heart of the keyboard. It registers key presses and connects all switches." +
+            " Different PCBs offer various features like hot-swap, RGB lighting, and layout compatibility.."
+    },
+    {
+        id: 3,
+        title: "Choose now your Plate!",
+        description: "The plate sits between the switches and the PCB, holding the switches firmly in place." +
+            " It affects how the keyboard feels and sounds when typing, depending on the material and layout cutouts."
+    },
+    {
+        id: 4,
+        title: "Time for the switches!",
+        description: "Switches are the mechanical components beneath each keycap that register key presses." +
+            " They determine how a keyboard feels and sounds, and come in different types: linear, tactile, and clicky."
+    },
+    {
+        id: 5,
+        title: "Final step! Choose your keycaps!",
+        description: "Keycaps are the visible tops of your keyboard keys. They affect the look, feel, and sound of your keyboard," +
+            " and come in different shapes, profiles, materials, and printing methods."
+    }
+];
