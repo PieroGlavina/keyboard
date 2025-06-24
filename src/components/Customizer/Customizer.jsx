@@ -1,5 +1,6 @@
-import React from 'react'
 import CustomizerContainer from "./CustomizerContainer.jsx";
+import React, { useState } from 'react';
+import Carousel from "./Carousel.jsx";
 
 const Customizer = () => {
     return (
@@ -14,7 +15,10 @@ const Customizer = () => {
                     <CustomizerContainer />
                 </div>
 
-                <div className="w-1/3 h-[90%] bg-white"></div>
+                <div className="w-1/3 h-[90%] bg-white">
+                    <Carousel />
+
+                </div>
             </div>
 
         </section>

@@ -40,6 +40,8 @@ const CustomizerContainer = () => {
                     maxDistance={0.5}
                     maxAzimuthAngle={Math.PI/2}
                     maxPolarAngle={Math.PI/2}
+                    autoRotate
+                    autoRotateSpeed={1}
                 />
             </Canvas>
         </div>
