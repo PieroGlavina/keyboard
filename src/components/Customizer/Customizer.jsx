@@ -10,6 +10,7 @@ const Customizer = () => {
     const [isPlateVisible, setIsPlateVisible] = useState(false);
     const [isSwitchVisible, setIsSwitchVisible] = useState(false);
     const [isKeycapsVisible, setIsKeycapsVisible] = useState(false);
+    const [isCollapsed, setIsCollapsed] = useState(false);
 
     const [currentCase, setCurrentCase] = useState({id: 1, name: "Aluminum", color: "#b4c5f8", price: 50});
     const [currentPcb, setCurrentPcb] = useState({id: 1, name: "Hot-swap (no soldering)", color: "#bababa", price: 50});
@@ -45,6 +46,8 @@ const Customizer = () => {
                         currentPlate={currentPlate}
                         currentSwitch={currentSwitch}
                         currentKeyCap={currentKeyCap}
+
+                        isCollapsed={isCollapsed}
 
                     />
                 </div>
