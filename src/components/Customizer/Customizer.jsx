@@ -1,5 +1,5 @@
 import CustomizerContainer from "./CustomizerContainer.jsx";
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Carousel from "./Carousel.jsx";
 
 const Customizer = () => {
@@ -12,6 +12,11 @@ const Customizer = () => {
 
     const [currentCase, setCurrentCase] = useState({id: 1, name: "Aluminum", color: "#b4c5f8", price: 50});
     const [currentPcb, setCurrentPcb] = useState({id: 1, name: "Hot-swap (no soldering)", color: "#bababa", price: 50});
+
+    useEffect(() => {
+        //console.log(setCurrentPcb);
+    }, [currentPcb]);
+
 
     return (
         <section className="w-full max-h-screen relative flex flex-col">

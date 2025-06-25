@@ -15,7 +15,8 @@ const PcbCustomizer = ({setCurrentPcb}) => {
                     {pcbCtz.types.map(type => (
                         <li
                             className="p-3 flex items-center"
-                            onClick={ () => {setCurrentPcb(type)}}
+                            key={type.id}
+                            onClick={() => {console.log("CLICKED"); setCurrentPcb(type)}}
                         >
                             <div className="w-10 h-10 rounded-full" style={{ backgroundColor: type.color }}/>
                             <p className="text-lg font-display text-custom-gray text-justify px-3"> {type.name}</p>

@@ -6,14 +6,12 @@ import React, {useEffect, useRef} from 'react'
 import { useGLTF } from '@react-three/drei'
 import scene from '../../public/assets/3D/PCB.glb'
 
-const PCB = ({ currentPCB, ...props}) => {
+const PCB = ({currentPcb, ...props}) => {
     const { nodes, materials } = useGLTF(scene)
 
     useEffect(() => {
-        console.log(currentPCB);
-        //materials["PCBMaterial"].color.set(currentPCB.color);
-    }, [currentPCB]);
-
+        materials["PCBMaterial"].color.set(currentPcb.color);
+    }, [currentPcb]);
 
 
     return (
