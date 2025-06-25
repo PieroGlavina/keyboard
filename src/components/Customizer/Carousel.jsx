@@ -5,12 +5,12 @@ import PlateCustomizer from "./PlateCustomizer.jsx";
 import SwitchCustomizer from "./SwitchCustomizer.jsx";
 import KeyCapsCustomizer from "./KeyCapsCustomizer.jsx";
 
-const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSwitchVisible, setIsKeycapsVisible, setCurrentCase, setCurrentPcb}) => {
+const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSwitchVisible, setIsKeycapsVisible, setCurrentCase, setCurrentPcb, setCurrentPlate}) => {
 
     const pages = [
         <CaseCustomizer key="1" setCurrentCase={setCurrentCase}/>,
         <PcbCustomizer key="2" setCurrentPcb={setCurrentPcb}/>,
-        <PlateCustomizer key="3"/>,
+        <PlateCustomizer key="3" setCurrentPlate={setCurrentPlate}/>,
         <SwitchCustomizer key="4"/>,
         <KeyCapsCustomizer key="5"/>
     ]

@@ -12,6 +12,7 @@ const Customizer = () => {
 
     const [currentCase, setCurrentCase] = useState({id: 1, name: "Aluminum", color: "#b4c5f8", price: 50});
     const [currentPcb, setCurrentPcb] = useState({id: 1, name: "Hot-swap (no soldering)", color: "#bababa", price: 50});
+    const [currentPlate, setCurrentPlate] = useState({id: 1, name: "Aluminum", color: "#a1a3af", price: 15})
 
     useEffect(() => {
         //console.log(setCurrentPcb);
@@ -36,6 +37,7 @@ const Customizer = () => {
 
                         currentCase={currentCase}
                         currentPcb={currentPcb}
+                        currentPlate={currentPlate}
 
                     />
                 </div>
@@ -50,6 +52,7 @@ const Customizer = () => {
 
                         setCurrentCase={setCurrentCase}
                         setCurrentPcb={setCurrentPcb}
+                        setCurrentPlate={setCurrentPlate}
                     />
 
                 </div>
