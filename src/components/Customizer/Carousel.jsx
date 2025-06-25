@@ -1,15 +1,14 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import CaseCustomizer from "./CaseCustomizer.jsx";
 import PcbCustomizer from "./PcbCustomizer.jsx";
 import PlateCustomizer from "./PlateCustomizer.jsx";
 import SwitchCustomizer from "./SwitchCustomizer.jsx";
-import KeyCaps from "../../models/KeyCaps.jsx";
 import KeyCapsCustomizer from "./KeyCapsCustomizer.jsx";
 
-const Carousel = () => {
+const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSwitchVisible, setIsKeycapsVisible}) => {
 
     const pages = [
-        <CaseCustomizer key="1"/>,
+        <CaseCustomizer key="1" />,
         <PcbCustomizer key="2"/>,
         <PlateCustomizer key="3"/>,
         <SwitchCustomizer key="4"/>,
@@ -17,15 +16,32 @@ const Carousel = () => {
     ]
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isPrevBtnDisabled, setIsPrevBtnDisabled] = useState(true);
+    const [isNextBtnDisabled, setIsNextBtnDisabled] = useState(false);
 
-    const goToPage = (index) => {
-        const newIndex = (index + pages.length) % pages.length;
+    const goToPage = (indexOffset) => {
+        const newIndex = currentIndex + indexOffset;
         setCurrentIndex(newIndex);
     }
 
     const getPage = () => {
         return pages[currentIndex];
     }
+
+    useEffect(() => {
+        setIsPrevBtnDisabled(currentIndex === 0);
+        setIsNextBtnDisabled(currentIndex === pages.length - 1)
+
+        setIsCaseVisible(currentIndex >= 0);
+        setIsPcbVisible(currentIndex >= 1);
+        setIsPlateVisible(currentIndex >= 2);
+        setIsSwitchVisible(currentIndex >= 3);
+        setIsKeycapsVisible(currentIndex >= 4);
+
+    }, [currentIndex]);
+
+
+
 
 
     return (
@@ -36,15 +52,17 @@ const Carousel = () => {
 
             <div className=" flex items-center justify-between p-2">
                 <button
-                    className="flex items-center justify-center bg-custom-gray rounded-xl px-7 py-3 cursor-pointer hover:bg-custom-gray-light transition-all"
-                    onClick={() => goToPage(currentIndex -1)}
+                    className={`flex items-center justify-center rounded-xl px-7 py-3 transition-all ${isPrevBtnDisabled ? "bg-custom-gray" : "bg-transparent border-2 border-white text-white cursor-pointer"}`}
+                    onClick={() => goToPage( -1)}
+                    disabled={isPrevBtnDisabled}
                 >
                     Prev
                 </button>
 
                 <button
-                    className="flex items-center justify-center bg-custom-gray rounded-xl px-7 py-3 cursor-pointer hover:bg-custom-gray-light transition-all"
-                    onClick={() => goToPage(currentIndex +1)}
+                    className={`flex items-center justify-center rounded-xl px-7 py-3 transition-all ${isNextBtnDisabled ? "bg-custom-gray" : "bg-transparent border-2 border-white text-white cursor-pointer"}`}
+                    onClick={() => goToPage( +1)}
+                    disabled={isNextBtnDisabled}
                 >
                     Next
                 </button>
