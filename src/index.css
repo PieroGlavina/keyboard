@@ -39,3 +39,26 @@ body{
             transparent 100%
     );
 }
+
+/* Rimuove le dimensioni predefinite del picker */
+.react-colorful {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0.75rem;
+}
+
+.react-colorful__saturation,
+.react-colorful__hue {
+    border-radius: 0.5rem;
+}
+
+.react-colorful__hue {
+    margin-top: 0.75rem;
+}
+
+.react-colorful__pointer {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px #000;
+}

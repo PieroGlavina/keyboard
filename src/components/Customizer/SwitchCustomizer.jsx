@@ -4,23 +4,22 @@ import {switchColors} from "../../Costants/Costants.js";
 const SwitchCustomizer = ({setCurrentSwitch}) => {
     return (
         <div>
-            <div className="p-5">
+            <div className="py-5">
                 <h1 className="text-2xl font-bold font-display text-custom-gray-light py-2">Time for the switches!</h1>
                 <p className="text-lg font-display text-custom-gray text-justify">
-                    Switches are the mechanical components beneath each keycap that register key presses.
-                    They determine how a keyboard feels and sounds, and come in different types: linear, tactile, and clicky.
+                    Switches sit under each keycap and define the keyboard’s feel and sound—linear, tactile, or clicky
                 </p>
             </div>
 
             <div>
-                <p>Choose a material</p>
+                <p className="font-display text-custom-gray-light text-justify>Choose a material">Choose a material</p>
                 <ul>
                     {switchColors.map(type => (
                         <li
-                            className="p-3 flex items-center"
+                            className="p-3 flex items-center cursor-pointer"
                             onClick={() => {setCurrentSwitch(type)}}
                         >
-                            <div className="w-10 h-10 rounded-full" style={{ backgroundColor: type.color }}/>
+                            <div className="w-5 h-5 rounded-full" style={{ backgroundColor: type.color }}/>
                             <p className="text-lg font-display text-custom-gray text-justify px-3"> {type.name}</p>
                         </li>
                     ))}

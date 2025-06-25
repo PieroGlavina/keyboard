@@ -1,25 +1,30 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {keycapCtz} from "../../Costants/Costants.js";
+import ColorPicker from "./ColorPicker.jsx";
 
-const KetCapsCustomizer = () => {
+const KetCapsCustomizer = ({setCurrentKeyCap}) => {
+
+    const [keyColorBase, setKeyColorBase] = useState("#b7b7b7");
+    const [keyColorSpecial, setKeyColorSpecial] = useState("#676767");
+
+    useEffect(() => {
+        setCurrentKeyCap({base: keyColorBase, special: keyColorSpecial});
+        //console.log({base: keyColorBase, special: keyColorSpecial});
+    }, [keyColorBase, keyColorSpecial]);
+
     return (
         <div>
-            <div className="p-5">
+            <div>
                 <h1 className="text-2xl font-bold font-display text-custom-gray-light py-2">{keycapCtz.title}</h1>
                 <p className="text-lg font-display text-custom-gray text-justify">{keycapCtz.description}</p>
             </div>
 
             <div>
-                <p>Choose a material</p>
-                <ul>
-                    {keycapCtz.materials.map(type => (
-                        <li className="p-3 flex items-center">
-                            <div className="w-10 h-10 rounded-full" style={{ backgroundColor: type.color }}/>
-                            <p className="text-lg font-display text-custom-gray text-justify px-3"> {type.name}</p>
-                        </li>
-                    ))}
-                </ul>
+                <p className="font-display text-custom-gray-light text-justify py-2">Choose a color for the base keycaps</p>
+                <ColorPicker color={keyColorBase} setColor={setKeyColorBase}/>
 
+                <p className="font-display text-custom-gray-light text-justify py-2">Choose a color for the specials keycaps</p>
+                <ColorPicker color={keyColorSpecial} setColor={setKeyColorSpecial} />
             </div>
         </div>
 

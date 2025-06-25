@@ -8,7 +8,7 @@ import Switches from "../../models/Switches.jsx";
 import KeyCaps from "../../models/KeyCaps.jsx";
 import Lights from "./Lights.jsx";
 
-const CustomizerContainer = ({isCaseVisible, isPcbVisible, isPlateVisible, isSwitchVisible, isKeycapsVisible, currentCase, currentPcb, currentPlate, currentSwitch}) => {
+const CustomizerContainer = ({isCaseVisible, isPcbVisible, isPlateVisible, isSwitchVisible, isKeycapsVisible, currentCase, currentPcb, currentPlate, currentSwitch, currentKeyCap}) => {
     return (
         <div className="w-full h-full">
             <Canvas>
@@ -27,7 +27,7 @@ const CustomizerContainer = ({isCaseVisible, isPcbVisible, isPlateVisible, isSwi
                         <PCB position={[0, 0.05, 0]} visible={isPcbVisible} currentPcb={currentPcb}/>
                         <Plate position={[0, 0.1, 0]} visible={isPlateVisible} currentPlate={currentPlate}/>
                         <Switches position={[0, 0.15, 0]} visible={isSwitchVisible} currentSwitch={currentSwitch}/>
-                        <KeyCaps position={[0, 0.2, 0]} visible={isKeycapsVisible}/>
+                        <KeyCaps position={[0, 0.2, 0]} visible={isKeycapsVisible} currentKeyCap={currentKeyCap}/>
                     </group>
                 </Suspense>
 

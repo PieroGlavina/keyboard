@@ -151,8 +151,7 @@ export const keyboardText = [
 
 export const caseCtz = {
     title: "Let’s start with the case!",
-    description: "The case is the outer shell of a mechanical keyboard that holds all components together. " +
-        "It affects the keyboard’s look, sound, and feel, and comes in different materials, sizes, and mounting styles for full customization.",
+    description: "The case shapes the keyboard’s look, sound, and feel—it’s the outer shell that holds everything together.",
     materials: [
         { id: 1, name: "Aluminum", color: "#b4c5f8", price: 50},
         { id: 2, name: "Plastic",  color: "#1d357c", price: 20},
@@ -162,14 +161,13 @@ export const caseCtz = {
 
 export const pcbCtz = {
     title: "Choose now your PCB!",
-    description: "The PCB (Printed Circuit Board) is the electronic heart of the keyboard. It registers key presses and connects all switches." +
-        " Different PCBs offer various features like hot-swap, RGB lighting, and layout compatibility.",
+    description: "The PCB is the keyboard’s brain—detects key presses and adds features like hot-swap, RGB, and layout options",
     types: [
         { id: 1, name: "Hot-swap (no soldering)", color: "#bababa", price: 50},
         { id: 2, name: "Solderable",  color: "#3c3c3c", price: 20},
     ],
     connection: [
-        { id: 1, name: "USB-C)", color: "#bababa", price: 10},
+        { id: 1, name: "USB-C", color: "#bababa", price: 10},
         { id: 2, name: "Wireless (Bluetooth /2.4GHz)",  color: "#3c3c3c", price: 15},
         { id: 2, name: "Both",  color: "#3c3c3c", price: 25},
     ]
@@ -177,8 +175,7 @@ export const pcbCtz = {
 
 export const plateCtz = {
     title: "Choose now your Plate!",
-    description: "The plate sits between the switches and the PCB, holding the switches firmly in place. It affects how the keyboard feels " +
-        "and sounds when typing, depending on the material and layout cutouts.",
+    description: "The plate secures switches above the PCB and shapes the keyboard’s feel and sound based on its material.",
     materials: [
         { id: 1, name: "Aluminum", color: "#a1a3af", price: 15},
         { id: 2, name: "Brass",  color: "#d8ac16", price: 20},
@@ -188,8 +185,7 @@ export const plateCtz = {
 
 export const keycapCtz = {
     title: "Final step! Choose your keycaps!",
-    description: "Keycaps are the visible tops of your keyboard keys. They affect the look, feel, and sound of your keyboard," +
-        " and come in different shapes, profiles, materials, and printing methods.",
+    description: "Keycaps are the top parts of keys, shaping the keyboard’s look, feel, and sound.",
     materials: [
         { id: 1, name: "ABS – Smooth and lightweight; prone to shine over time", color: "#a1a3af", price: 15},
         { id: 2, name: "PBT – Textured and durable; resists wear and shine.",  color: "#d8ac16", price: 20},

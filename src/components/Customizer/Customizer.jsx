@@ -14,7 +14,15 @@ const Customizer = () => {
     const [currentCase, setCurrentCase] = useState({id: 1, name: "Aluminum", color: "#b4c5f8", price: 50});
     const [currentPcb, setCurrentPcb] = useState({id: 1, name: "Hot-swap (no soldering)", color: "#bababa", price: 50});
     const [currentPlate, setCurrentPlate] = useState({id: 1, name: "Aluminum", color: "#a1a3af", price: 15});
-    const [currentSwitch, setCurrentSwitch] = useState({id: 0, name: "Red (linear)", description: "Smooth and quiet with no bump, ideal for gaming and fast typing.", color: "#c62323", sound: clickSound1})
+    const [currentSwitch, setCurrentSwitch] = useState({id: 0, name: "Red (linear)", description: "Smooth and quiet with no bump, ideal for gaming and fast typing.", color: "#c62323", sound: clickSound1});
+    const [currentKeyCap, setCurrentKeyCap] = useState({base: "#b7b7b7", special: "#676767"});
+
+    useEffect(() => {
+        //materials["BaseKeyCapMaterial"].color.set(currentKeyCap.base);
+        //materials["SpecialKeyCapsMaterial"].color.set(currentKeyCap.special);
+        console.log(">" + currentKeyCap);
+    }, [currentKeyCap]);
+
 
     return (
         <section className="w-full max-h-screen relative flex flex-col">
@@ -36,6 +44,7 @@ const Customizer = () => {
                         currentPcb={currentPcb}
                         currentPlate={currentPlate}
                         currentSwitch={currentSwitch}
+                        currentKeyCap={currentKeyCap}
 
                     />
                 </div>
@@ -52,6 +61,7 @@ const Customizer = () => {
                         setCurrentPcb={setCurrentPcb}
                         setCurrentPlate={setCurrentPlate}
                         setCurrentSwitch={setCurrentSwitch}
+                        setCurrentKeyCap={setCurrentKeyCap}
                     />
 
                 </div>
