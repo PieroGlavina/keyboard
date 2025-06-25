@@ -1,11 +1,17 @@
 
 
-import React, { useRef } from 'react'
+import React, {useEffect, useRef} from 'react'
 import { useGLTF } from '@react-three/drei'
 import scene from '../../public/assets/3D/case.glb'
 
-const Case = ({...props}) => {
+const Case = ({currentCase, ...props}) => {
+
     const { nodes, materials } = useGLTF(scene)
+
+    useEffect(() => {
+        materials["CaseMaterial"].color.set(currentCase.color);
+    }, [currentCase]);
+
     return (
         <group {...props} dispose={null}>
             <mesh

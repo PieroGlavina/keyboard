@@ -18,7 +18,7 @@ const SwitchCustomizer = () => {
                     {switchColors.map(type => (
                         <li className="p-3 flex items-center">
                             <div className="w-10 h-10 rounded-full" style={{ backgroundColor: type.color }}/>
-                            <p className="text-lg font-display text-custom-gray text-justify px-3"> {type.name} - {type.description}</p>
+                            <p className="text-lg font-display text-custom-gray text-justify px-3"> {type.name}</p>
                         </li>
                     ))}
                 </ul>

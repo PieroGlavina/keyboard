@@ -10,6 +10,9 @@ const Customizer = () => {
     const [isSwitchVisible, setIsSwitchVisible] = useState(false);
     const [isKeycapsVisible, setIsKeycapsVisible] = useState(false);
 
+    const [currentCase, setCurrentCase] = useState({id: 1, name: "Aluminum", color: "#b4c5f8", price: 50});
+    const [currentPcb, setCurrentPcb] = useState({id: 1, name: "Hot-swap (no soldering)", color: "#bababa", price: 50});
+
     return (
         <section className="w-full max-h-screen relative flex flex-col">
             <div className="flex items-center justify-center p-5">
@@ -25,6 +28,10 @@ const Customizer = () => {
                         isPlateVisible={isPlateVisible}
                         isSwitchVisible={isSwitchVisible}
                         isKeycapsVisible={isKeycapsVisible}
+
+                        currentCase={currentCase}
+                        currentPcb={currentPcb}
+
                     />
                 </div>
 
@@ -35,6 +42,9 @@ const Customizer = () => {
                         setIsPlateVisible={setIsPlateVisible}
                         setIsSwitchVisible={setIsSwitchVisible}
                         setIsKeycapsVisible={setIsKeycapsVisible}
+
+                        setCurrentCase={setCurrentCase}
+                        setCurrentPcb={setCurrentPcb}
                     />
 
                 </div>

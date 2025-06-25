@@ -1,7 +1,7 @@
 import React from 'react'
 import {pcbCtz} from "../../Costants/Costants.js";
 
-const PcbCustomizer = () => {
+const PcbCustomizer = ({setCurrentPcb}) => {
     return (
         <div>
             <div className="p-5">
@@ -13,7 +13,10 @@ const PcbCustomizer = () => {
                 <p>Choose a material</p>
                 <ul>
                     {pcbCtz.types.map(type => (
-                        <li className="p-3 flex items-center">
+                        <li
+                            className="p-3 flex items-center"
+                            onClick={ () => {setCurrentPcb(type)}}
+                        >
                             <div className="w-10 h-10 rounded-full" style={{ backgroundColor: type.color }}/>
                             <p className="text-lg font-display text-custom-gray text-justify px-3"> {type.name}</p>
                         </li>

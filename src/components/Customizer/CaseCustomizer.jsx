@@ -1,7 +1,7 @@
 import React from 'react'
 import {caseCtz} from "../../Costants/Costants.js";
 
-const CaseCustomizer = () => {
+const CaseCustomizer = ({setCurrentCase}) => {
     return (
         <div>
             <div className="p-5">
@@ -13,7 +13,9 @@ const CaseCustomizer = () => {
                 <p>Choose a material</p>
                 <ul>
                     {caseCtz.materials.map(material => (
-                        <li className="p-3 flex items-center">
+                        <li className="p-3 flex items-center" key={material.id}
+                            onClick={() => {setCurrentCase(material)}}
+                        >
                             <div className="w-10 h-10 rounded-full" style={{ backgroundColor: material.color }}/>
                             <p className="text-lg font-display text-custom-gray text-justify px-3"> {material.name}</p>
                         </li>

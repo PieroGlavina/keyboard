@@ -11,14 +11,13 @@ const SwitchPresentation = () => {
     return (
         <section className="w-full min-h-screen flex items-center justify-center px-4 py-10 bg-black">
             <div className="w-full max-w-7xl flex flex-col md:flex-row gap-8">
-                {/* Left - Model */}
+
                 <div className="w-full md:w-1/2 h-[300px] md:h-[500px] flex justify-center items-center">
                     <div className="w-full h-full hero-radial-gradient">
                         <SwitchModelContainer color={switchColor} sound={switchSound} />
                     </div>
                 </div>
 
-                {/* Right - Content */}
                 <div className="w-full md:w-1/2 flex flex-col justify-center">
                     <h1 className="text-white font-display text-5xl md:text-7xl mb-4 text-center md:text-left">
                         OUR SWITCHES
@@ -32,7 +31,6 @@ const SwitchPresentation = () => {
                         mechanical switches to match your style!
                     </p>
 
-                    {/* Color selection */}
                     <div className="flex flex-col gap-4 mb-10">
                         <p className="text-custom-gray-light font-display text-xs">Explore our selection</p>
                         <ul className="flex gap-4 flex-wrap">
@@ -49,10 +47,10 @@ const SwitchPresentation = () => {
                                     }}
                                 />
                             ))}
+
                         </ul>
                     </div>
 
-                    {/* Button */}
                     <div className="flex flex-col gap-3">
                         <p className="text-custom-gray-light font-display text-xs">Already sure?</p>
                         <CustomButton isFilled={false} />
