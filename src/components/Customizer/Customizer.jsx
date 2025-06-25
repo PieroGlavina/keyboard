@@ -1,6 +1,7 @@
 import CustomizerContainer from "./CustomizerContainer.jsx";
 import React, {useEffect, useState} from 'react';
 import Carousel from "./Carousel.jsx";
+import {clickSound1} from "../../utils/index.js";
 
 const Customizer = () => {
 
@@ -12,12 +13,8 @@ const Customizer = () => {
 
     const [currentCase, setCurrentCase] = useState({id: 1, name: "Aluminum", color: "#b4c5f8", price: 50});
     const [currentPcb, setCurrentPcb] = useState({id: 1, name: "Hot-swap (no soldering)", color: "#bababa", price: 50});
-    const [currentPlate, setCurrentPlate] = useState({id: 1, name: "Aluminum", color: "#a1a3af", price: 15})
-
-    useEffect(() => {
-        //console.log(setCurrentPcb);
-    }, [currentPcb]);
-
+    const [currentPlate, setCurrentPlate] = useState({id: 1, name: "Aluminum", color: "#a1a3af", price: 15});
+    const [currentSwitch, setCurrentSwitch] = useState({id: 0, name: "Red (linear)", description: "Smooth and quiet with no bump, ideal for gaming and fast typing.", color: "#c62323", sound: clickSound1})
 
     return (
         <section className="w-full max-h-screen relative flex flex-col">
@@ -38,6 +35,7 @@ const Customizer = () => {
                         currentCase={currentCase}
                         currentPcb={currentPcb}
                         currentPlate={currentPlate}
+                        currentSwitch={currentSwitch}
 
                     />
                 </div>
@@ -53,6 +51,7 @@ const Customizer = () => {
                         setCurrentCase={setCurrentCase}
                         setCurrentPcb={setCurrentPcb}
                         setCurrentPlate={setCurrentPlate}
+                        setCurrentSwitch={setCurrentSwitch}
                     />
 
                 </div>

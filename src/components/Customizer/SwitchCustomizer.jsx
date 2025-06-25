@@ -1,7 +1,7 @@
 import React from 'react'
 import {switchColors} from "../../Costants/Costants.js";
 
-const SwitchCustomizer = () => {
+const SwitchCustomizer = ({setCurrentSwitch}) => {
     return (
         <div>
             <div className="p-5">
@@ -16,7 +16,10 @@ const SwitchCustomizer = () => {
                 <p>Choose a material</p>
                 <ul>
                     {switchColors.map(type => (
-                        <li className="p-3 flex items-center">
+                        <li
+                            className="p-3 flex items-center"
+                            onClick={() => {setCurrentSwitch(type)}}
+                        >
                             <div className="w-10 h-10 rounded-full" style={{ backgroundColor: type.color }}/>
                             <p className="text-lg font-display text-custom-gray text-justify px-3"> {type.name}</p>
                         </li>
