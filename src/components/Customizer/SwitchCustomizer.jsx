@@ -20,7 +20,7 @@ const SwitchCustomizer = ({setCurrentSwitch}) => {
                             onClick={() => {setCurrentSwitch(type)}}
                         >
                             <div className="w-5 h-5 rounded-full" style={{ backgroundColor: type.color }}/>
-                            <p className="text-lg font-display text-custom-gray text-justify px-3"> {type.name}</p>
+                            <p className="text-lg font-display text-custom-gray text-justify px-3"> {type.name} (+ {type.price}€)</p>
                         </li>
                     ))}
                 </ul>

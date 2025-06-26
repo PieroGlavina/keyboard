@@ -9,7 +9,6 @@ const KetCapsCustomizer = ({setCurrentKeyCap}) => {
 
     useEffect(() => {
         setCurrentKeyCap({base: keyColorBase, special: keyColorSpecial});
-        //console.log({base: keyColorBase, special: keyColorSpecial});
     }, [keyColorBase, keyColorSpecial]);
 
     return (
@@ -20,10 +19,10 @@ const KetCapsCustomizer = ({setCurrentKeyCap}) => {
             </div>
 
             <div>
-                <p className="font-display text-custom-gray-light text-justify py-2">Choose a color for the base keycaps</p>
+                <p className="font-display text-custom-gray-light text-justify py-2">Choose a color for the base keycaps (+ 0€)</p>
                 <ColorPicker color={keyColorBase} setColor={setKeyColorBase}/>
 
-                <p className="font-display text-custom-gray-light text-justify py-2">Choose a color for the specials keycaps</p>
+                <p className="font-display text-custom-gray-light text-justify py-2">Choose a color for the specials keycaps (+ 0€)</p>
                 <ColorPicker color={keyColorSpecial} setColor={setKeyColorSpecial} />
             </div>
         </div>

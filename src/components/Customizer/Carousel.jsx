@@ -6,7 +6,7 @@ import SwitchCustomizer from "./SwitchCustomizer.jsx";
 import KeyCapsCustomizer from "./KeyCapsCustomizer.jsx";
 import ReviewCustomizer from "./ReviewCustomizer.jsx";
 
-const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSwitchVisible, setIsKeycapsVisible, setCurrentCase, setCurrentPcb, setCurrentPlate, setCurrentSwitch, setCurrentKeyCap, setIsCollapsed}) => {
+const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSwitchVisible, setIsKeycapsVisible, setCurrentCase, setCurrentPcb, setCurrentPlate, setCurrentSwitch, setCurrentKeyCap, setIsCollapsed, currentCase, currentPcb, currentPlate, currentSwitch, currentKeyCap}) => {
 
     const pages = [
         <CaseCustomizer key="1" setCurrentCase={setCurrentCase}/>,
@@ -14,7 +14,7 @@ const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSw
         <PlateCustomizer key="3" setCurrentPlate={setCurrentPlate}/>,
         <SwitchCustomizer key="4" setCurrentSwitch={setCurrentSwitch}/>,
         <KeyCapsCustomizer key="5" setCurrentKeyCap={setCurrentKeyCap}/>,
-        <ReviewCustomizer key="6" setIsCollapsed={setIsCollapsed}/>
+        <ReviewCustomizer key="6" setIsCollapsed={setIsCollapsed} currentCase={currentCase} currentPcb={currentPcb} currentPlate={currentPlate} currentSwitch={currentSwitch} currentKeyCap={currentKeyCap}/>
     ]
 
     const [currentIndex, setCurrentIndex] = useState(0);

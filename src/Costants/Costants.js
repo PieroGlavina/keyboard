@@ -19,49 +19,56 @@ export const switchColors = [
         name: "Red (linear)",
         description: "Smooth and quiet with no bump, ideal for gaming and fast typing.",
         color: "#c62323",
-        sound: clickSound1
+        sound: clickSound1,
+        price: 45
     },
     {
         id: 1,
         name: "Yellow (linear)",
         description: "Light, smooth, and slightly faster than red — great for competitive use.",
         color: "#e8bb14",
-        sound: clickSound2
+        sound: clickSound2,
+        price: 40
     },
     {
         id: 2,
         name: "Silent Red (Linear) ",
         description: "Like red but with built-in dampening for ultra-quiet typing.",
         color: "#6e0d0d",
-        sound: clickSound3
+        sound: clickSound3,
+        price: 50
     },
     {
         id: 3,
         name: "Green (Tactile)",
         description: "Gentle bump without click; perfect balance for typing and casual gaming.",
         color: "#1f5a05",
-        sound: clickSound4
+        sound: clickSound4,
+        price: 40
     },
     {
         id: 4,
         name: "Clear (Tactile) ",
         description: "Heavier tactile bump: for those who prefer more pronounced feedback.",
         color: "#b4c5f8",
-        sound: clickSound6
+        sound: clickSound6,
+        price: 50
     },
     {
         id: 5,
         name: "Blue (Clicky)",
         description: "Tactile bump with loud click, satisfying for some, noisy for others.",
         color: "#2d4dac",
-        sound: clickSound7
+        sound: clickSound7,
+        price: 35
     },
     {
         id: 6,
         name: "Box White (Clicky) ",
         description: "Clean, crisp click with a more refined sound and shorter travel.",
         color: "#e9e9e9",
-        sound: clickSound8
+        sound: clickSound8,
+        price: 45
     },
 
 ];
