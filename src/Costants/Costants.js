@@ -8,7 +8,22 @@ import {
     whiteTiktok
 } from "../utils/index.js";
 
-export const navList = ["About", "Switches", "Features"];
+export const navList = [
+    {
+        id: 1,
+        title: "About",
+        href: "#about"
+    },
+    {
+        id: 2,
+        title: "Switches",
+        href: "#switches"
+    },
+    {
+        id: 3,
+        title: "Features",
+        href: "#features"
+}];
 
 export const heroDescription = "Designed for ultimate customization, the MK-zero combines minimalist design, high-quality components, and a uniquely satisfying typing experience. " +
     "Choose your switches, customize every key, and make it truly yours.";

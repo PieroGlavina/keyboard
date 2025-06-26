@@ -9,7 +9,7 @@ const SwitchPresentation = () => {
     const [switchSound, setSwitchSound] = useState(clickSound1);
 
     return (
-        <section className="w-full min-h-screen flex items-center justify-center px-4 py-10 bg-black">
+        <section className="w-full min-h-screen flex items-center justify-center px-4 py-10 bg-black" id="switches">
             <div className="w-full max-w-7xl flex flex-col md:flex-row gap-8">
 
                 <div className="w-full md:w-1/2 h-[300px] md:h-[500px] flex justify-center items-center">

@@ -5,6 +5,8 @@ import PlateCustomizer from "./PlateCustomizer.jsx";
 import SwitchCustomizer from "./SwitchCustomizer.jsx";
 import KeyCapsCustomizer from "./KeyCapsCustomizer.jsx";
 import ReviewCustomizer from "./ReviewCustomizer.jsx";
+import {useGSAP} from "@gsap/react";
+import gsap from "gsap";
 
 const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSwitchVisible, setIsKeycapsVisible, setCurrentCase, setCurrentPcb, setCurrentPlate, setCurrentSwitch, setCurrentKeyCap, setIsCollapsed, currentCase, currentPcb, currentPlate, currentSwitch, currentKeyCap}) => {
 
@@ -12,7 +14,7 @@ const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSw
         <CaseCustomizer key="1" setCurrentCase={setCurrentCase}/>,
         <PcbCustomizer key="2" setCurrentPcb={setCurrentPcb}/>,
         <PlateCustomizer key="3" setCurrentPlate={setCurrentPlate}/>,
-        <SwitchCustomizer key="4" setCurrentSwitch={setCurrentSwitch}/>,
+        <SwitchCustomizer  key="4" setCurrentSwitch={setCurrentSwitch}/>,
         <KeyCapsCustomizer key="5" setCurrentKeyCap={setCurrentKeyCap}/>,
         <ReviewCustomizer key="6" setIsCollapsed={setIsCollapsed} currentCase={currentCase} currentPcb={currentPcb} currentPlate={currentPlate} currentSwitch={currentSwitch} currentKeyCap={currentKeyCap}/>
     ]
@@ -30,6 +32,11 @@ const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSw
         return pages[currentIndex];
     }
 
+    useGSAP(() => {
+        gsap.fromTo("#ciao", {opacity: 0, y: 100}, {y: 0, opacity: 1, duration: 1, ease: "easeOut"});
+    }, [currentIndex]);
+
+
     useEffect(() => {
         setIsPrevBtnDisabled(currentIndex === 0);
         setIsNextBtnDisabled(currentIndex === pages.length - 1)
@@ -43,12 +50,9 @@ const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSw
     }, [currentIndex]);
 
 
-
-
-
     return (
         <div className="w-full h-full flex flex-col">
-            <div className="w-full h-full flex items-center justify-center transition-all ">
+            <div id="ciao" className="w-full h-full flex items-center justify-center">
                 {getPage()}
             </div>
 

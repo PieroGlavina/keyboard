@@ -48,7 +48,7 @@ const VideoScroller = () => {
     });
 
     return (
-        <section className="w-full">
+        <section className="w-full" id="features">
             <div className="flex items-center justify-center mb-10 px-4 text-center">
                 <h1 className="text-white font-display text-3xl md:text-5xl">
                     Built for performance. Designed for precision

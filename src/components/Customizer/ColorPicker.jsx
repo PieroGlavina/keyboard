@@ -3,7 +3,7 @@ import { HexColorPicker } from "react-colorful";
 
 const ColorPicker = ({ color, setColor }) => {
     return (
-        <div className="w-full h-60 p-4 rounded-2xl bg-zinc-800">
+        <div className="w-full h-50 p-4 rounded-2xl bg-zinc-800">
             <HexColorPicker
                 color={color}
                 onChange={setColor}
