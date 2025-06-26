@@ -9,16 +9,22 @@ import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 
 
-const Plate = ({currentPlate, isVisible, ...props}) => {
+const Plate = ({currentPlate, toAnimate, isCollapsed,...props}) => {
 
     const { nodes, materials } = useGLTF(scene)
 
     const PlateRef = useRef();
 
-    useEffect(() => {
+    useGSAP(() => {
         if(!PlateRef.current) return;
         gsap.fromTo(PlateRef.current.position,  {y: 0.5}, {y: 0.1, duration: 0.5, ease: "easeOut"});
-    });
+    }, [toAnimate]);
+
+    useGSAP(() => {
+        if(!PlateRef.current) return;
+        gsap.fromTo(PlateRef.current.position,  {y: 0.1}, {y: 0.01, duration: 1, ease: "easeOut"});
+    }, [isCollapsed]);
+
 
 
     useEffect(() => {

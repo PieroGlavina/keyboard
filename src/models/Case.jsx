@@ -1,5 +1,3 @@
-
-
 import React, {useEffect, useRef} from 'react'
 import { useGLTF } from '@react-three/drei'
 import scene from '../../public/assets/3D/case.glb'
@@ -19,9 +17,9 @@ const Case = ({currentCase, ...props}) => {
                 receiveShadow
                 geometry={nodes.Case.geometry}
                 material={materials.CaseMaterial}
-                position={[0.007, 0.01, -0.001]}
-                rotation={[-0.079, 0, 0]}
-                scale={[0.997, 1, 1]}
+                position={[0, 0.01, 0]}
+                rotation={[-0.15, 0, 0]}
+                scale={[1, 1, 1]}
             />
         </group>
     )

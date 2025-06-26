@@ -18,13 +18,6 @@ const Customizer = () => {
     const [currentSwitch, setCurrentSwitch] = useState({id: 0, name: "Red (linear)", description: "Smooth and quiet with no bump, ideal for gaming and fast typing.", color: "#c62323", sound: clickSound1});
     const [currentKeyCap, setCurrentKeyCap] = useState({base: "#b7b7b7", special: "#676767"});
 
-    useEffect(() => {
-        //materials["BaseKeyCapMaterial"].color.set(currentKeyCap.base);
-        //materials["SpecialKeyCapsMaterial"].color.set(currentKeyCap.special);
-        console.log(">" + currentKeyCap);
-    }, [currentKeyCap]);
-
-
     return (
         <section className="w-full max-h-screen relative flex flex-col">
             <div className="flex items-center justify-center p-5">
@@ -65,6 +58,8 @@ const Customizer = () => {
                         setCurrentPlate={setCurrentPlate}
                         setCurrentSwitch={setCurrentSwitch}
                         setCurrentKeyCap={setCurrentKeyCap}
+
+                        setIsCollapsed={setIsCollapsed}
                     />
 
                 </div>
