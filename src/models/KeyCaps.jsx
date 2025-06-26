@@ -32,12 +32,12 @@ const KeyCaps = ({currentKeyCap, toAnimate, isCollapsed, ...props}) => {
     const { nodes, materials } = useGLTF(scene)
     return (
         <group ref={CapsRef} {...props} dispose={null}>
-            <group>
+            <group position={[0, 0.006, 0.001]}>
                 <mesh
                     castShadow
                     receiveShadow
                     geometry={nodes.Plane.geometry}
-                    material={materials.SpecialKeyCapsMaterial}
+                    material={materials.LetteringMaterial}
                 />
                 <mesh
                     castShadow

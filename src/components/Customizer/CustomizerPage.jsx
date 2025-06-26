@@ -20,7 +20,10 @@ const CustomizerPage = () => {
 
     return (
         <section className="w-full max-h-screen relative flex flex-col">
-            <div className="flex items-center justify-center p-5">
+            <div className="flex items-center m-5 justify-between">
+                <a href="/" className="cursor-pointer">
+                    <h1 className="font-display text-white fontbold text-4xl">MK-ZERO</h1>
+                </a>
                 <h1 className="font-display text-white fontbold text-4xl">Your turn to customize it!</h1>
             </div>
 
