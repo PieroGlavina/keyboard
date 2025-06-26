@@ -8,8 +8,10 @@ const SwitchPresentation = () => {
     const [switchColor, setSwitchColor] = useState('#c62323');
     const [switchSound, setSwitchSound] = useState(clickSound1);
 
+    const [description, setDescription] = useState(switchColors[0].description);
+
     return (
-        <section className="w-full min-h-screen flex items-center justify-center px-4 py-10 bg-black" id="switches">
+        <section className="w-full min-h-screen flex items-center justify-center px-4 py-10" id="switches">
             <div className="w-full max-w-7xl flex flex-col md:flex-row gap-8">
 
                 <div className="w-full md:w-1/2 h-[300px] md:h-[500px] flex justify-center items-center">
@@ -32,7 +34,7 @@ const SwitchPresentation = () => {
                     </p>
 
                     <div className="flex flex-col gap-4 mb-10">
-                        <p className="text-custom-gray-light font-display text-xs">Explore our selection</p>
+                        <p className="text-custom-gray-light font-display text-xs">Explore our selection (click on it and listen to the sound)</p>
                         <ul className="flex gap-4 flex-wrap">
                             {switchColors.map((item) => (
                                 <li
@@ -44,12 +46,15 @@ const SwitchPresentation = () => {
                                     onClick={() => {
                                         setSwitchColor(item.color);
                                         setSwitchSound(item.sound);
+                                        setDescription(item.description);
                                     }}
                                 />
                             ))}
 
                         </ul>
                     </div>
+
+                    <p className="text-custom-gray-light font-display text-sm md:text-base mb-10 text-center md:text-left">{description}</p>
 
                     <div className="flex flex-col gap-3">
                         <p className="text-custom-gray-light font-display text-xs">Already sure?</p>

@@ -16,7 +16,7 @@ const Hero = () => {
                 </h2>
             </div>
 
-            <div className="absolute inset-0 h-[50vh] sm:h-[60vh] md:h-[70vh] flex items-center justify-center pointer-events-none z-10">
+            <div className="absolute inset-0 h-[50vh] sm:h-[60vh] md:h-[70vh] flex items-center justify-center z-10">
                 <KeyboardModelContainer />
             </div>
 
@@ -31,7 +31,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col items-center z-0">
+            <div className="flex flex-col items-center z-20">
                 <div className="w-full max-w-sm px-4 text-center space-y-4">
                     <CustomButton isFilled={false} />
                     <p className="font-display text-custom-gray-light italic text-sm sm:text-base py-5">

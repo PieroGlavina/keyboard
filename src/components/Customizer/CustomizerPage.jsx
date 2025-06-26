@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import Carousel from "./Carousel.jsx";
 import {clickSound1} from "../../utils/index.js";
 
-const Customizer = () => {
+const CustomizerPage = () => {
 
     const [isCaseVisible, setIsCaseVisible] = useState(false);
     const [isPcbVisible, setIsPcbVisible] = useState(false);
@@ -74,4 +74,4 @@ const Customizer = () => {
         </section>
     )
 }
-export default Customizer
+export default CustomizerPage

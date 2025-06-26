@@ -17,7 +17,7 @@ const TextScroller = ({ scrollYProgress }) => {
                         className="sticky top-[20%] px-4 text-center text-white font-display flex justify-center items-center"
                         style={{ y, opacity }}
                     >
-                        <p className="text-2xl md:text-4xl lg:text-5xl leading-snug md:leading-normal max-w-[90vw] md:max-w-3xl">
+                        <p className="text-2xl md:text-2xl lg:text-2xl leading-snug md:leading-normal max-w-[90vw] md:max-w-3xl">
                             {item.text}
                         </p>
                     </motion.div>
