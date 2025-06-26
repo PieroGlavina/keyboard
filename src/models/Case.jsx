@@ -17,7 +17,7 @@ const Case = ({currentCase, ...props}) => {
                 receiveShadow
                 geometry={nodes.Case.geometry}
                 material={materials.CaseMaterial}
-                position={[0, 0.01, 0]}
+                position={[0, 0.01, 0.003]}
                 rotation={[-0.15, 0, 0]}
                 scale={[1, 1, 1]}
             />

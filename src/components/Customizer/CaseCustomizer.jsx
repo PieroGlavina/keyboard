@@ -5,7 +5,7 @@ import ColorPicker from "./ColorPicker.jsx";
 
 
 const CaseCustomizer = ({setCurrentCase}) => {
-    const [color, setColor] = useState("#272727");
+    const [color, setColor] = useState();
 
     useEffect(() => {
         setCurrentCase({id: 1, name: "Aluminum", color: color, price: 50});

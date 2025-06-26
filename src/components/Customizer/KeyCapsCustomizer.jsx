@@ -4,8 +4,8 @@ import ColorPicker from "./ColorPicker.jsx";
 
 const KetCapsCustomizer = ({setCurrentKeyCap}) => {
 
-    const [keyColorBase, setKeyColorBase] = useState("#b7b7b7");
-    const [keyColorSpecial, setKeyColorSpecial] = useState("#676767");
+    const [keyColorBase, setKeyColorBase] = useState();
+    const [keyColorSpecial, setKeyColorSpecial] = useState();
 
     useEffect(() => {
         setCurrentKeyCap({base: keyColorBase, special: keyColorSpecial});

@@ -11,6 +11,7 @@ import Lights from "./Lights.jsx";
 const CustomizerContainer = ({isCaseVisible, isPcbVisible, isPlateVisible, isSwitchVisible, isKeycapsVisible, currentCase, currentPcb, currentPlate, currentSwitch, currentKeyCap, isCollapsed}) => {
 
     const [toAnimate, setToAnimate] = useState({case: false, pcb: false, plate: false, switch: false, keycaps: false});
+
     useEffect(() => {
         setToAnimate({
             case: isCaseVisible,
