@@ -38,9 +38,9 @@ const CustomizerContainer = ({isCaseVisible, isPcbVisible, isPlateVisible, isSwi
                     <group position={[0, -0.1, 0]} scale={1.3}>
                         <Case visible={isCaseVisible} currentCase={currentCase}/>
                         <PCB visible={false} isVisible={isPcbVisible} currentPcb={currentPcb} toAnimate={toAnimate["pcb"]} isCollapsed={isCollapsed}/>
-                        <Plate visible={isPlateVisible} currentPlate={currentPlate} toAnimate={toAnimate["plate"]} isCollapsed={isCollapsed}/>
-                        <Switches visible={isSwitchVisible} currentSwitch={currentSwitch} toAnimate={toAnimate["switch"]} isCollapsed={isCollapsed}/>
-                        <KeyCaps visible={isKeycapsVisible} currentKeyCap={currentKeyCap} toAnimate={toAnimate["keycaps"]} isCollapsed={isCollapsed}/>
+                        <Plate visible={false} isVisible={isPlateVisible} currentPlate={currentPlate} toAnimate={toAnimate["plate"]} isCollapsed={isCollapsed}/>
+                        <Switches visible={false} isVisible={isSwitchVisible} currentSwitch={currentSwitch} toAnimate={toAnimate["switch"]} isCollapsed={isCollapsed}/>
+                        <KeyCaps visible={false} isVisible={isKeycapsVisible} currentKeyCap={currentKeyCap} toAnimate={toAnimate["keycaps"]} isCollapsed={isCollapsed}/>
                     </group>
                 </Suspense>
 

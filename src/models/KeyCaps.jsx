@@ -9,7 +9,7 @@ import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 
 
-const KeyCaps = ({currentKeyCap, toAnimate, isCollapsed, ...props}) => {
+const KeyCaps = ({currentKeyCap, toAnimate, isCollapsed, isVisible,...props}) => {
 
     useEffect(() => {
         materials["BaseKeyCapMaterial"].color.set(currentKeyCap.base);
@@ -21,12 +21,34 @@ const KeyCaps = ({currentKeyCap, toAnimate, isCollapsed, ...props}) => {
 
     useGSAP(() => {
         if(!CapsRef.current) return;
-        gsap.fromTo(CapsRef.current.position,  {y: 0.5}, {y: 0.2, duration: 0.5, ease: "easeOut"});
+
+        if(toAnimate) { //going down
+            CapsRef.current.visible = true;
+
+            gsap.fromTo(CapsRef.current.position, {y: 0.5}, {
+                y: 0.2,
+                duration: 1,
+                ease: "easeOut",
+            });
+
+        }else{  //going up
+            gsap.fromTo(CapsRef.current.position, {y: 0.2}, {
+                y: 0.5,
+                duration: 1,
+                ease: "easeOut",
+                onComplete: () => {
+                    CapsRef.current.visible = false;
+                }
+            });
+        }
+
     }, [toAnimate]);
+
+
 
     useGSAP(() => {
         if(!CapsRef.current) return;
-        gsap.fromTo(CapsRef.current.position,  {y: 0.2}, {y: 0.03, duration: 1, ease: "easeOut"});
+        //gsap.fromTo(CapsRef.current.position,  {y: 0.2}, {y: 0.03, duration: 1, ease: "easeOut"});
     }, [isCollapsed]);
 
     const { nodes, materials } = useGLTF(scene)

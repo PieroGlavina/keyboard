@@ -8,7 +8,7 @@ import scene from '../../public/assets/3D/switches.glb'
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 
-const Switches =({currentSwitch, toAnimate, isCollapsed, ...props}) => {
+const Switches =({currentSwitch, toAnimate, isCollapsed, isVisible, ...props}) => {
     const { nodes, materials } = useGLTF(scene)
 
     const SwitchRef = useRef();
@@ -19,12 +19,38 @@ const Switches =({currentSwitch, toAnimate, isCollapsed, ...props}) => {
 
     useGSAP(() => {
         if(!SwitchRef.current) return;
-        gsap.fromTo(SwitchRef.current.position,  {y: 0.5}, {y: 0.15, duration: 0.5, ease: "easeOut"});
+
+        if(toAnimate) { //going down
+            SwitchRef.current.visible = true;
+
+            gsap.fromTo(SwitchRef.current.position, {y: 0.5}, {
+                y: 0.15,
+                duration: 1,
+                ease: "easeOut",
+            });
+
+        }else{  //going up
+            gsap.fromTo(SwitchRef.current.position, {y: 0.15}, {
+                y: 0.5,
+                duration: 1,
+                ease: "easeOut",
+                onComplete: () => {
+                    SwitchRef.current.visible = false;
+                }
+            });
+        }
+
     }, [toAnimate]);
+
+
+
+
+
+
 
     useGSAP(() => {
         if(!SwitchRef.current) return;
-        gsap.fromTo(SwitchRef.current.position,  {y: 0.15}, {y: 0.018, duration: 1, ease: "easeOut"});
+        //gsap.fromTo(SwitchRef.current.position,  {y: 0.15}, {y: 0.018, duration: 1, ease: "easeOut"});
     }, [isCollapsed]);
 
 

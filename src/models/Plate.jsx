@@ -9,27 +9,41 @@ import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 
 
-const Plate = ({currentPlate, toAnimate, isCollapsed,...props}) => {
+const Plate = ({currentPlate, toAnimate, isCollapsed, isVisible, ...props}) => {
 
     const { nodes, materials } = useGLTF(scene)
     const PlateRef = useRef();
-    const [isDown, setIsDown] = useState(false)
 
     useGSAP(() => {
         if(!PlateRef.current) return;
-        //console.log(isDown);
-        if(isDown) {
-            gsap.fromTo(PlateRef.current.position,  {y: 0.5}, {y: 0.1, duration: 0.5, ease: "easeOut"});
-            setIsDown(true)
-        }else{
-            gsap.fromTo(PlateRef.current.position,  {y: 0.1}, {y: 0.5, duration: 0.5, ease: "easeOut"});
-            setIsDown(false)
+
+        if(toAnimate) { //going down
+            PlateRef.current.visible = true;
+
+            gsap.fromTo(PlateRef.current.position, {y: 0.5}, {
+                y: 0.1,
+                duration: 1,
+                ease: "easeOut",
+            });
+
+        }else{  //going up
+            gsap.fromTo(PlateRef.current.position, {y: 0.1}, {
+                y: 0.5,
+                duration: 1,
+                ease: "easeOut",
+                onComplete: () => {
+                    PlateRef.current.visible = false;
+                }
+            });
         }
+
     }, [toAnimate]);
 
+
+
     useGSAP(() => {
         if(!PlateRef.current) return;
-        gsap.fromTo(PlateRef.current.position,  {y: 0.1}, {y: 0.01, duration: 1, ease: "easeOut"});
+        //gsap.fromTo(PlateRef.current.position,  {y: 0.1}, {y: 0.01, duration: 1, ease: "easeOut"});
     }, [isCollapsed]);
 
 
