@@ -1,7 +1,7 @@
 import React from 'react'
 import {pcbCtz} from "../../Costants/Costants.js";
 
-const PcbCustomizer = ({setCurrentPcb}) => {
+const PcbCustomizer = ({setCurrentPcb, currentPcb}) => {
     return (
         <div>
             <div className="py-5">
@@ -18,7 +18,10 @@ const PcbCustomizer = ({setCurrentPcb}) => {
                             key={type.id}
                             onClick={() => {console.log("CLICKED"); setCurrentPcb(type)}}
                         >
-                            <div className="w-5 h-5 rounded-full" style={{ backgroundColor: type.color }}/>
+                            <div
+                                className={`w-5 h-5 rounded-full cursor-pointer ${ currentPcb["name"] === type.name ? 'border-2 border-white' : ''}`}
+                                style={{ backgroundColor: type.color }}
+                            />
                             <p className="text-lg font-display text-custom-gray text-justify px-3"> {type.name} (+ {type.price}€)</p>
                         </li>
                     ))}
@@ -27,8 +30,15 @@ const PcbCustomizer = ({setCurrentPcb}) => {
                 <p className="font-display text-custom-gray-light text-justify mt-5">Choose a connection mode</p>
                 <ul>
                     {pcbCtz.connection.map(conn => (
-                        <li className="p-3 flex items-center cursor-pointer">
-                            <div className="w-5 h-5 rounded-full" style={{ backgroundColor: conn.color }}/>
+                        <li
+                            className="p-3 flex items-center cursor-pointer"
+                            key={conn.id}
+                            onClick={() => {setCurrentPcb({...currentPcb, connection: conn.name, connectionPrice: conn.price})}}
+                        >
+                            <div
+                                className={`w-5 h-5 rounded-full cursor-pointer ${ currentPcb["connection"] === conn.name ? 'border-2 border-white' : ''}`}
+                                style={{ backgroundColor: conn.color }}
+                            />
                             <p className="text-lg font-display text-custom-gray text-justify px-3"> {conn.name} (+ {conn.price}€)</p>
                         </li>
                     ))}

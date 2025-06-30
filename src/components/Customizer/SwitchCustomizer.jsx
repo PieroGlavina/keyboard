@@ -1,7 +1,7 @@
 import React from 'react'
 import {switchColors} from "../../Costants/Costants.js";
 
-const SwitchCustomizer = ({setCurrentSwitch}) => {
+const SwitchCustomizer = ({setCurrentSwitch, currentSwitch}) => {
     return (
         <div>
             <div className="py-5">
@@ -19,7 +19,10 @@ const SwitchCustomizer = ({setCurrentSwitch}) => {
                             className="p-3 flex items-center cursor-pointer"
                             onClick={() => {setCurrentSwitch(type)}}
                         >
-                            <div className="w-5 h-5 rounded-full" style={{ backgroundColor: type.color }}/>
+                            <div
+                                className={`w-5 h-5 rounded-full cursor-pointer ${ currentSwitch["name"] === type.name ? 'border-2 border-white' : ''}`}
+                                style={{ backgroundColor: type.color }}
+                            />
                             <p className="text-lg font-display text-custom-gray text-justify px-3"> {type.name} (+ {type.price}€)</p>
                         </li>
                     ))}

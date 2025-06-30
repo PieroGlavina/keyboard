@@ -1,16 +1,14 @@
 import React, {useEffect, useState} from 'react'
 import {caseCtz} from "../../Costants/Costants.js";
-import { HexColorPicker } from "react-colorful";
 import ColorPicker from "./ColorPicker.jsx";
 
 
-const CaseCustomizer = ({setCurrentCase}) => {
-    const [color, setColor] = useState();
+const CaseCustomizer = ({setCurrentCase, currentCase}) => {
+    const [color, setColor] = useState(currentCase.color);
 
     useEffect(() => {
-        setCurrentCase({id: 1, name: "Aluminum", color: color, price: 50});
+        setCurrentCase({...currentCase, color: color});
     }, [color]);
-
 
     return (
         <div>
@@ -20,19 +18,29 @@ const CaseCustomizer = ({setCurrentCase}) => {
             </div>
 
             <div>
+
                 <p className="font-display text-custom-gray-light text-justify">Choose a material</p>
                 <ul>
                     {caseCtz.materials.map(material => (
-                        <li className="p-3 flex items-center cursor-pointer" key={material.id}
-                            onClick={() => {setCurrentCase(material)}}
+                        <li
+                            className="p-3 flex items-center cursor-pointer"
+                            key={material.id}
+                            onClick={() => {
+                                setCurrentCase(material);
+                                console.log(currentCase["name"], material.name);
+                            }}
                         >
-                            <div className="w-5 h-5 rounded-full" style={{ backgroundColor: material.color }}/>
+                            <div
+                                className={`w-5 h-5 rounded-full cursor-pointer ${ currentCase["name"] === material.name ? 'border-2 border-white' : ''}`}
+                                style={{ backgroundColor: material.color }}
+                            />
                             <p className="text-lg font-display text-custom-gray text-justify px-3"> {material.name} (+ {material.price}€)</p>
                         </li>
                     ))}
                 </ul>
-                <p className="font-display text-custom-gray-light text-justify py-2">Choose a color</p>
 
+
+                <p className="font-display text-custom-gray-light text-justify py-2">Choose a color</p>
                 <ColorPicker color={color} setColor={setColor} />
 
             </div>

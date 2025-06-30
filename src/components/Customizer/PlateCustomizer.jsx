@@ -1,7 +1,7 @@
 import React from 'react'
 import {plateCtz} from "../../Costants/Costants.js";
 
-const PlateCustomizer = ({setCurrentPlate}) => {
+const PlateCustomizer = ({setCurrentPlate, currentPlate}) => {
     return (
         <div>
             <div className="py-5">
@@ -17,7 +17,10 @@ const PlateCustomizer = ({setCurrentPlate}) => {
                             className="p-3 flex items-center cursor-pointer"
                             onClick={() => {setCurrentPlate(material)}}
                         >
-                            <div className="w-5 h-5 rounded-full" style={{ backgroundColor: material.color }}/>
+                            <div
+                                className={`w-5 h-5 rounded-full cursor-pointer ${ currentPlate["name"] === material.name ? 'border-2 border-white' : ''}`}
+                                style={{ backgroundColor: material.color }}
+                            />
                             <p className="text-lg font-display text-custom-gray text-justify px-3"> {material.name} (+ {material.price}€)</p>
                         </li>
                     ))}

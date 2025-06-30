@@ -191,7 +191,7 @@ export const pcbCtz = {
     connection: [
         { id: 1, name: "USB-C", color: "#bababa", price: 10},
         { id: 2, name: "Wireless (Bluetooth /2.4GHz)",  color: "#3c3c3c", price: 15},
-        { id: 2, name: "Both",  color: "#3c3c3c", price: 25},
+        { id: 3, name: "Both",  color: "#3c3c3c", price: 25},
     ]
 }
 

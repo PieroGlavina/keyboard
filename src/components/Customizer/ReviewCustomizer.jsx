@@ -17,11 +17,11 @@ const ReviewCustomizer = ({setIsCollapsed, currentCase, currentPcb, currentPlate
             </div>
 
             <div>
-                <p className="font-display text-custom-gray-light text-justify">Case: {currentCase.name} ({currentCase.price}€)</p>
-                <p className="font-display text-custom-gray-light text-justify">PCB: {currentPcb.name} ({currentPcb.price}€)</p>
+                <p className="font-display text-custom-gray-light text-justify">Case: {currentCase.name} ({currentCase.price}€) </p>
+                <p className="font-display text-custom-gray-light text-justify">PCB: {currentPcb.name} ({currentPcb.price}€), Connection: {currentPcb.connection} ({currentPcb.connectionPrice}€)</p>
                 <p className="font-display text-custom-gray-light text-justify">Plate: {currentPlate.name} ({currentPlate.price}€)</p>
                 <p className="font-display text-custom-gray-light text-justify">Switches: {currentSwitch.name} ({currentSwitch.price}€)</p>
-                <p className="font-display text-custom-gray-light text-justify">KeyCaps: {currentKeyCap.base}</p>
+                <p className="font-display text-custom-gray-light text-justify">KeyCaps: {currentKeyCap.base}, {currentKeyCap.special}</p>
             </div>
 
             <div className="py-5">
