@@ -12,25 +12,23 @@ const PCB = ({currentPcb, toAnimate, isCollapsed, isVisible, ...props}) => {
 
     useGSAP(() => {
         if(!PCBref.current) return;
-        console.log("toAnimate", toAnimate, "isVisible", isVisible);
 
-        if(toAnimate) {
+        if(toAnimate) { //going down
+            PCBref.current.visible = true;
+
             gsap.fromTo(PCBref.current.position, {y: 0.5}, {
                 y: 0.05,
                 duration: 1,
                 ease: "easeOut",
-                onStart: () => {
-                    PCBref.current.visible = isVisible;
-                }
             });
 
-        }else{
+        }else{  //going up
             gsap.fromTo(PCBref.current.position, {y: 0.05}, {
                 y: 0.5,
                 duration: 1,
                 ease: "easeOut",
                 onComplete: () => {
-                    PCBref.current.visible = isVisible;
+                    PCBref.current.visible = false;
                 }
             });
         }
