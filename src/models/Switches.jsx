@@ -42,15 +42,24 @@ const Switches =({currentSwitch, toAnimate, isCollapsed, isVisible, ...props}) =
 
     }, [toAnimate]);
 
-
-
-
-
-
-
     useGSAP(() => {
         if(!SwitchRef.current) return;
-        //gsap.fromTo(SwitchRef.current.position,  {y: 0.15}, {y: 0.018, duration: 1, ease: "easeOut"});
+        console.log("isCollapsed: ",isCollapsed);
+
+        if(isCollapsed) { //going down
+            gsap.fromTo(SwitchRef.current.position, {y: 0.15}, {
+                y: 0.018,
+                duration: 1,
+                ease: "easeOut",
+            });
+
+        }else{  //going up
+            gsap.fromTo(SwitchRef.current.position, {y: 0.018}, {
+                y: 0.15,
+                duration: 1,
+                ease: "easeOut",
+            });
+        }
     }, [isCollapsed]);
 
 

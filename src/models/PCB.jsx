@@ -38,7 +38,22 @@ const PCB = ({currentPcb, toAnimate, isCollapsed, isVisible, ...props}) => {
 
     useGSAP(() => {
         if(!PCBref.current) return;
-        //gsap.fromTo(PCBref.current.position, {y: 0.05}, {y: 0.005, duration: 1, ease: "easeOut"});
+        console.log("isCollapsed: ",isCollapsed);
+
+        if(isCollapsed) { //going down
+            gsap.fromTo(PCBref.current.position, {y: 0.05}, {
+                y: 0.005,
+                duration: 1,
+                ease: "easeOut",
+            });
+
+        }else{  //going up
+            gsap.fromTo(PCBref.current.position, {y: 0.005}, {
+                y: 0.05,
+                duration: 1,
+                ease: "easeOut",
+            });
+        }
     }, [isCollapsed]);
 
 

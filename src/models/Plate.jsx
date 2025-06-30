@@ -40,12 +40,25 @@ const Plate = ({currentPlate, toAnimate, isCollapsed, isVisible, ...props}) => {
     }, [toAnimate]);
 
 
-
     useGSAP(() => {
         if(!PlateRef.current) return;
-        //gsap.fromTo(PlateRef.current.position,  {y: 0.1}, {y: 0.01, duration: 1, ease: "easeOut"});
-    }, [isCollapsed]);
+        console.log("isCollapsed: ",isCollapsed);
 
+        if(isCollapsed) { //going down
+            gsap.fromTo(PlateRef.current.position, {y: 0.1}, {
+                y: 0.01,
+                duration: 1,
+                ease: "easeOut",
+            });
+
+        }else{  //going up
+            gsap.fromTo(PlateRef.current.position, {y: 0.01}, {
+                y: 0.1,
+                duration: 1,
+                ease: "easeOut",
+            });
+        }
+    }, [isCollapsed]);
 
 
     useEffect(() => {

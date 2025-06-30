@@ -2,10 +2,10 @@ import React, {useEffect} from 'react'
 import {caseCtz} from "../../Costants/Costants.js";
 import ColorPicker from "./ColorPicker.jsx";
 
-const ReviewCustomizer = ({setIsCollapsed, currentCase, currentPcb, currentPlate, currentSwitch, currentKeyCap}) => {
+const ReviewCustomizer = ({setIsCollapsed, isCollapsed, currentCase, currentPcb, currentPlate, currentSwitch, currentKeyCap}) => {
 
     useEffect(() => {
-        setIsCollapsed(true);
+        if(!isCollapsed) setIsCollapsed(!isCollapsed);
     }, []);
 
 

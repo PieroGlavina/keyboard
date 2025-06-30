@@ -63,6 +63,7 @@ const CustomizerPage = () => {
                         setCurrentKeyCap={setCurrentKeyCap}
 
                         setIsCollapsed={setIsCollapsed}
+                        isCollapsed={isCollapsed}
 
                         currentCase={currentCase}
                         currentPcb={currentPcb}

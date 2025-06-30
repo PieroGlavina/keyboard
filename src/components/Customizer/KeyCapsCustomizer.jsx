@@ -2,10 +2,14 @@ import React, {useEffect, useState} from 'react'
 import {keycapCtz} from "../../Costants/Costants.js";
 import ColorPicker from "./ColorPicker.jsx";
 
-const KetCapsCustomizer = ({setCurrentKeyCap, currentKeyCap}) => {
+const KetCapsCustomizer = ({setCurrentKeyCap, currentKeyCap, isCollapsed, setIsCollapsed}) => {
 
     const [keyColorBase, setKeyColorBase] = useState(currentKeyCap.base);
     const [keyColorSpecial, setKeyColorSpecial] = useState(currentKeyCap.special);
+
+    useEffect(() => {
+        if(isCollapsed) setIsCollapsed(!isCollapsed);
+    }, []);
 
     useEffect(() => {
         setCurrentKeyCap({base: keyColorBase, special: keyColorSpecial});

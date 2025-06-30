@@ -44,12 +44,26 @@ const KeyCaps = ({currentKeyCap, toAnimate, isCollapsed, isVisible,...props}) =>
 
     }, [toAnimate]);
 
-
-
     useGSAP(() => {
         if(!CapsRef.current) return;
-        //gsap.fromTo(CapsRef.current.position,  {y: 0.2}, {y: 0.03, duration: 1, ease: "easeOut"});
+        console.log("isCollapsed: ",isCollapsed);
+
+        if(isCollapsed) { //going down
+            gsap.fromTo(CapsRef.current.position, {y: 0.2}, {
+                y: 0.03,
+                duration: 1,
+                ease: "easeOut",
+            });
+
+        }else{  //going up
+            gsap.fromTo(CapsRef.current.position, {y: 0.03}, {
+                y: 0.2,
+                duration: 1,
+                ease: "easeOut",
+            });
+        }
     }, [isCollapsed]);
+
 
     const { nodes, materials } = useGLTF(scene)
     return (

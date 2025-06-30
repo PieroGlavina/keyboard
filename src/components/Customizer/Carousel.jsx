@@ -8,15 +8,15 @@ import ReviewCustomizer from "./ReviewCustomizer.jsx";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 
-const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSwitchVisible, setIsKeycapsVisible, setCurrentCase, setCurrentPcb, setCurrentPlate, setCurrentSwitch, setCurrentKeyCap, setIsCollapsed, currentCase, currentPcb, currentPlate, currentSwitch, currentKeyCap}) => {
+const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSwitchVisible, setIsKeycapsVisible, setCurrentCase, setCurrentPcb, setCurrentPlate, setCurrentSwitch, setCurrentKeyCap, setIsCollapsed, isCollapsed, currentCase, currentPcb, currentPlate, currentSwitch, currentKeyCap}) => {
 
     const pages = [
         <CaseCustomizer key="1" setCurrentCase={setCurrentCase} currentCase={currentCase}/>,
         <PcbCustomizer key="2" setCurrentPcb={setCurrentPcb} currentPcb={currentPcb}/>,
         <PlateCustomizer key="3" setCurrentPlate={setCurrentPlate} currentPlate={currentPlate}/>,
         <SwitchCustomizer  key="4" setCurrentSwitch={setCurrentSwitch} currentSwitch={currentSwitch}/>,
-        <KeyCapsCustomizer key="5" setCurrentKeyCap={setCurrentKeyCap} currentKeyCap={currentKeyCap}/>,
-        <ReviewCustomizer key="6" setIsCollapsed={setIsCollapsed} currentCase={currentCase} currentPcb={currentPcb} currentPlate={currentPlate} currentSwitch={currentSwitch} currentKeyCap={currentKeyCap}/>
+        <KeyCapsCustomizer key="5" setCurrentKeyCap={setCurrentKeyCap} currentKeyCap={currentKeyCap} isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />,
+        <ReviewCustomizer key="6" isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} currentCase={currentCase} currentPcb={currentPcb} currentPlate={currentPlate} currentSwitch={currentSwitch} currentKeyCap={currentKeyCap}/>
     ]
 
     const [currentIndex, setCurrentIndex] = useState(0);
