@@ -5,21 +5,42 @@ import scene from '../../public/assets/3D/PCB.glb'
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 
-const PCB = ({currentPcb, toAnimate, isCollapsed, ...props}) => {
-    const { nodes, materials } = useGLTF(scene)
+const PCB = ({currentPcb, toAnimate, isCollapsed, isVisible, ...props}) => {
 
+    const { nodes, materials } = useGLTF(scene);
     const PCBref = useRef();
 
     useGSAP(() => {
         if(!PCBref.current) return;
-        gsap.fromTo(PCBref.current.position, {y: 0.5}, {y: 0.05, duration: 0.5, ease: "easeOut"});
+        console.log("toAnimate", toAnimate, "isVisible", isVisible);
+
+        if(toAnimate) {
+            gsap.fromTo(PCBref.current.position, {y: 0.5}, {
+                y: 0.05,
+                duration: 1,
+                ease: "easeOut",
+                onStart: () => {
+                    PCBref.current.visible = isVisible;
+                }
+            });
+
+        }else{
+            gsap.fromTo(PCBref.current.position, {y: 0.05}, {
+                y: 0.5,
+                duration: 1,
+                ease: "easeOut",
+                onComplete: () => {
+                    PCBref.current.visible = isVisible;
+                }
+            });
+        }
+
     }, [toAnimate]);
 
 
     useGSAP(() => {
         if(!PCBref.current) return;
-        gsap.fromTo(PCBref.current.position, {y: 0.05}, {y: 0.005, duration: 1, ease: "easeOut"});
-        console.log("PCB" + isCollapsed);
+        //gsap.fromTo(PCBref.current.position, {y: 0.05}, {y: 0.005, duration: 1, ease: "easeOut"});
     }, [isCollapsed]);
 
 
