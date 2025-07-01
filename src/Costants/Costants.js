@@ -119,6 +119,34 @@ export const footerLinks = [
 
 ];
 
+export const footerInfo = [
+    {
+        id: 1,
+        title: "Head Office",
+        content: "123 Roma Street, 00100 Rome, Italy"
+    },
+    {
+        id: 2,
+        title: "Phone",
+        content: "+39 06 1234 5678"
+    },
+    {
+        id: 3,
+        title: "Email",
+        content: "info@mk-zero.com"
+    },
+    {
+        id: 4,
+        title: "VAT / Tax ID",
+        content: "12345678901"
+    },
+    {
+        id: 5,
+        title: "Opening Hours",
+        content: "Mon - Fri: 9:00 AM - 6:00 PM"
+    }
+];
+
 export const keyboardText = [
     {
         id: 1,

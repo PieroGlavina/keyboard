@@ -1,45 +1,56 @@
-import { motion, useTransform } from "framer-motion";
-import React from "react";
-import CustomButton from "./CustomButton.jsx";
-import { keyboardText } from "../../Costants/Costants.js";
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import * as GSAP from "gsap";
 
-const TextScroller = ({ scrollYProgress }) => {
+gsap.registerPlugin(ScrollTrigger);
+
+const TextScroller = ({ texts = [], height = 4000 }) => {
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const blocks = GSAP.utils.toArray('.text-block');
+
+        if (!blocks.length) return;
+
+        gsap.set(blocks, { opacity: 0, position: 'absolute', top: 0, left: 0 });
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: true,
+            },
+        });
+
+        blocks.forEach((block, i) => {
+            const start = i / blocks.length;
+            const end = (i + 1) / blocks.length;
+
+            tl.to(blocks, { opacity: 0, duration: 0.01 }, start);
+            tl.to(block, { opacity: 1, duration: 0.01 }, start);
+        });
+
+        return () => {
+            tl.kill();
+        };
+    }, []);
+
     return (
-        <>
-            {keyboardText.map((item) => {
-                const inputRange = [item.start, item.midIn, item.midOut, item.end];
-                const y = useTransform(scrollYProgress, inputRange, [100, 0, 0, -100]);
-                const opacity = useTransform(scrollYProgress, inputRange, [0, 1, 1, 0]);
-
-                return (
-                    <motion.div
-                        key={item.id}
-                        className="sticky top-[20%] px-4 text-center text-white font-display flex justify-center items-center"
-                        style={{ y, opacity }}
-                    >
-                        <p className="text-2xl md:text-2xl lg:text-2xl leading-snug md:leading-normal max-w-[90vw] md:max-w-3xl">
-                            {item.text}
-                        </p>
-                    </motion.div>
-                );
-            })}
-            <Button scrollYProgress={scrollYProgress} />
-        </>
-    );
-};
-
-const Button = ({ scrollYProgress }) => {
-    const inputRange = [0.75, 0.80, 0.85, 0.90];
-    const y = useTransform(scrollYProgress, inputRange, [100, 0, 0, 0]);
-    const opacity = useTransform(scrollYProgress, inputRange, [0, 1, 1, 1]);
-
-    return (
-        <motion.div
-            className="sticky top-[80%] z-20 flex justify-center items-center px-4"
-            style={{ y, opacity }}
+        <div
+            ref={containerRef}
+            className="relative w-full"
+            style={{ height: `${height}px` }}
         >
-            <CustomButton isFilled={true} />
-        </motion.div>
+            <div className="sticky top-[40vh] w-full text-center text-white text-3xl pointer-events-none">
+                {texts.map((text, index) => (
+                    <div key={index} className="text-block w-full">
+                        {text}
+                    </div>
+                ))}
+            </div>
+        </div>
     );
 };
 

@@ -2,6 +2,7 @@ import CustomizerContainer from "./CustomizerContainer.jsx";
 import React, {useEffect, useState} from 'react';
 import Carousel from "./Carousel.jsx";
 import {clickSound1} from "../../utils/index.js";
+import Footer from "../Footer.jsx";
 
 const CustomizerPage = () => {
 
@@ -19,7 +20,7 @@ const CustomizerPage = () => {
     const [currentKeyCap, setCurrentKeyCap] = useState({base: "#b7b7b7", special: "#676767"});
 
     return (
-        <section className="w-full max-h-screen relative flex flex-col">
+        <section className="w-full relative flex flex-col">
             <div className="flex items-center m-5 justify-between">
                 <a href="/" className="cursor-pointer">
                     <h1 className="font-display text-white fontbold text-4xl">MK-ZERO</h1>
@@ -74,6 +75,8 @@ const CustomizerPage = () => {
 
                 </div>
             </div>
+
+            <Footer/>
 
         </section>
     )
