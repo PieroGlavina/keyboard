@@ -3,8 +3,6 @@ import {navList} from "../../Costants/Costants.js";
 import CustomButton from "./CustomButton.jsx";
 import { Menu, X } from 'lucide-react';
 
-
-
 const NavBar = () => {
     //variable to keep track of screen size
     const [isMobile, setIsMobile] = useState(false)
@@ -22,7 +20,6 @@ const NavBar = () => {
                     <h1 className="text-3xl font-bold text-white font-display cursor-pointer">MK-Zero</h1>
                 </a>
 
-                {/*Navbar for desktop view*/}
                 <div className="hidden md:flex flex-1 justify-center items-center">
                     {navList.map((nav) => (
                         <a href={nav.href}>

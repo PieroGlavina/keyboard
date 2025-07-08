@@ -4,6 +4,7 @@ import {Suspense, useEffect, useState} from "react";
 import Keyboard from "../../models/Keyboard.jsx";
 import HeroCamera from "./HeroCamera.jsx";
 import Loader from "../Loader.jsx";
+import Lights from "./Lights.jsx";
 
 const KeyboardModelContainer = () => {
 
@@ -26,30 +27,7 @@ const KeyboardModelContainer = () => {
             <Canvas>
                 <PerspectiveCamera makeDefault position={[0, 0.4, 0.1]} rotation={[-0.8, 0, 0]}/>
 
-                <ambientLight intensity={1.2}/>
-
-                {/* Directional Light principale */}
-                <directionalLight
-                    position={[2, 4, 2]}
-                    intensity={1.5}
-                    castShadow
-                    shadow-mapSize-width={1024}
-                    shadow-mapSize-height={1024}
-                    shadow-camera-near={0.1}
-                    shadow-camera-far={10}
-                    shadow-camera-left={-2}
-                    shadow-camera-right={2}
-                    shadow-camera-top={2}
-                    shadow-camera-bottom={-2}
-                />
-
-                {/* Luce di riempimento per contrasto morbido */}
-                <directionalLight
-                    position={[-3, 2, -2]}
-                    intensity={0.5}
-                    color="lightblue"
-                />
-
+                <Lights />
 
                 <Suspense fallback={<Loader />}>
                     <HeroCamera isMobile={false}>

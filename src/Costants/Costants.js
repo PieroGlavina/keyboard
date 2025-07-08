@@ -147,58 +147,6 @@ export const footerInfo = [
     }
 ];
 
-export const keyboardText = [
-    {
-        id: 1,
-        text: "Every layer has a purpose — from top to bottom, precision is built in.",
-        start: 0.05,
-        midIn: 0.10,
-        midOut: 0.15,
-        end: 0.20,
-    },
-    {
-        id: 2,
-        text: "Beneath the surface lies the brain — programmable and precise.",
-        start: 0.20,
-        midIn: 0.25,
-        midOut: 0.30,
-        end: 0.35,
-    },
-    {
-        id: 3,
-        text: "Stabilizers. Switches. Mounting plates. Everything aligned for perfection.",
-        start: 0.35,
-        midIn: 0.40,
-        midOut: 0.45,
-        end: 0.50,
-    },
-    {
-
-        id: 4,
-        text: "The core structure isolates sound and reinforces every keystroke.",
-        start: 0.50,
-        midIn: 0.55,
-        midOut: 0.60,
-        end: 0.65,
-    },
-    {
-        id: 5,
-        text: "Sound dampening layers turn loud clicks into satisfying thocks.",
-        start: 0.65,
-        midIn: 0.70,
-        midOut: 0.75,
-        end: 0.80,
-    },
-    {
-        id: 6,
-        text: "This isn’t just a keyboard — it’s a finely tuned machine.",
-        start: 0.80,
-        midIn: 0.85,
-        midOut: 0.90,
-        end: 0.95,
-    }
-]
-
 export const caseCtz = {
     title: "Let’s start with the case!",
     description: "The case shapes the keyboard’s look, sound, and feel—it’s the outer shell that holds everything together.",
