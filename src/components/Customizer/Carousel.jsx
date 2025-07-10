@@ -33,7 +33,7 @@ const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSw
     }
 
     useGSAP(() => {
-        gsap.fromTo("#ciao", {opacity: 0, y: 100}, {y: 0, opacity: 1, duration: 1, ease: "easeOut"});
+        gsap.fromTo("#page", {opacity: 0, y: 100}, {y: 0, opacity: 1, duration: 1, ease: "easeOut"});
     }, [currentIndex]);
 
 
@@ -52,7 +52,7 @@ const Carousel = ({setIsCaseVisible, setIsPcbVisible, setIsPlateVisible, setIsSw
 
     return (
         <div className="w-full h-full flex flex-col">
-            <div id="ciao" className="w-full h-full flex items-center justify-center">
+            <div id="page" className="w-full h-full flex items-center justify-center">
                 {getPage()}
             </div>
 

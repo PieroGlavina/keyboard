@@ -1,7 +1,6 @@
 
 import { useGLTF } from "@react-three/drei";
 import scene from '../../public/assets/3D/keyboard.glb'
-import {useRef} from "react";
 
 
 const Keyboard = ({...props}) => {

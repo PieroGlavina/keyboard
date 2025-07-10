@@ -26,7 +26,6 @@ const Switch = ({color, sound, ...props}) => {
 
     const handleClick = () => {
         const action = actions["Pressing"];
-        console.log(audioRef.current);
 
         action.setLoop(THREE.LoopOnce, 1);
         action.timeScale = 2;
