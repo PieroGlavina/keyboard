@@ -42,7 +42,6 @@ const Plate = ({currentPlate, toAnimate, isCollapsed, isVisible, ...props}) => {
 
     useGSAP(() => {
         if(!PlateRef.current) return;
-        console.log("isCollapsed: ",isCollapsed);
 
         if(isCollapsed) { //going down
             gsap.fromTo(PlateRef.current.position, {y: 0.1}, {
